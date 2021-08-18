@@ -55,7 +55,6 @@ class CrudJson():
                 with open('arquivo_json.json', 'w', encoding='utf8') as f:
                     return json.dump(dados, f, ensure_ascii=False, indent=4, separators=(',', ':'))
 
-
     def delete(self, buscar):  # Deletar cadastrado no arquivo JSON
         with open('arquivo_json.json', 'r', encoding='utf8') as f:
             dados = json.load(f)
@@ -64,7 +63,6 @@ class CrudJson():
                 del dados[c]
                 with open('arquivo_json.json', 'w', encoding='utf8') as f:
                     return json.dump(dados, f, ensure_ascii=False, indent=4, separators=(',', ':'))
-
 
 while True:
     try:
@@ -130,7 +128,7 @@ while True:
 
             operacao = CrudJson().put(buscar, alterar_nome, alterar_idade)
 
-        elif resp == 6: # Delete (Deleta o cadastro informado no terminal)
+        elif resp == 6:  # Delete (Deleta o cadastro informado no terminal)
             buscar = str(input('Informe nome do cadastrado a ser \033[1:91mdeletado\033[m: '))
 
             operacao = CrudJson().delete(buscar)
@@ -146,4 +144,4 @@ print('\033[97m\nEncerrando programa\033[m', end='')
 for c in range(0, 3):
     print('.', end='')
     sleep(0.5)
-print('\033[97m\nPROGRAMA FINALIZADO\033[m')
+print('\033[97m\nPROGRAMA FINALIZADO!!!\033[m')
