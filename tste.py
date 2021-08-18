@@ -1,5 +1,7 @@
-lista = [{"nome": "Paula","idade": 23},{"nome": "Fabricio", "idade": 13}]
+def soma():
+    n1 = int(input('Primeiro valor: '))
+    n2 = int(input('Segundo valor: '))
 
+    return n1 + n2
 
-for c in range(0, len(lista)):
-    print(f'Nome: {lista[c]["nome"]}, {lista[c]["idade"]} anos')
+print(soma())
