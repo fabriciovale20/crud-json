@@ -19,8 +19,7 @@ class CrudJson():
     def read(self):  # Lendo arquivo JSON
         with open('arquivo_json.json', 'r') as f:
             dados = json.load(f)
-            for k in len(dados):
-                print(f'{k}º Nome: {dados[0]["nome"]} - Idade: {dados[0]["idade"]}')
+            return dados
 
 
     def post(self):  # Inserindo novos valores POST
