@@ -1,7 +1,5 @@
-def soma():
-    n1 = int(input('Primeiro valor: '))
-    n2 = int(input('Segundo valor: '))
-
-    return n1 + n2
-
-print(soma())
+def soma()
+    n1 = 2
+    n2 = 3
+    soma = n1 + n2
+    return f'{soma}
