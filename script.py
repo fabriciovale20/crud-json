@@ -11,7 +11,7 @@ class CrudJson:
 
         print()
         print('\033[1:34m=\033[m' * 40)
-        print('{:^55}'.format('\033[1:30:107m   Escolha uma das opção abaixo   \033[m'))
+        print('{:^55}'.format('\033[1:30:107m   Escolha uma das opções abaixo   \033[m'))
         print('\033[1:34m=\033[m' * 40)
         resp = int(input('\033[97m1.\033[m Redefinir arquivo JSON\n'
                          '\033[97m2.\033[m Ler JSON\n'
