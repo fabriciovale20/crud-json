@@ -24,17 +24,23 @@ class CrudJson:
 
     # Função para salvar dados de entrada NOME e IDADE
     def pergunta_dados(self):
-        global nome, idade, buscar, alterar
+        global nome, idade, buscar
 
-        if resp == 3:
-            nome = str(input('Nome: '))
-            idade = int(input('Idade: '))
-        elif resp == 4:
-            buscar = str(input('Buscar por: '))
-        elif resp == 5:
-            buscar = str(input('Alterar cadastro de nome: '))
-        elif resp == 6:
-            buscar = str(input('Informe nome do cadastrado a ser \033[91mdeletado\033[m: '))
+        while True:
+            try:
+                if resp == 3:
+                    nome = str(input('Nome: '))
+                    idade = int(input('Idade: '))
+                elif resp == 4:
+                    buscar = str(input('Buscar por: '))
+                elif resp == 5:
+                    buscar = str(input('Alterar cadastro de nome: '))
+                elif resp == 6:
+                    buscar = str(input('Informe nome do cadastrado a ser \033[91mdeletado\033[m: '))
+            except Exception:
+                print('\033[91mDados inválidos, tente novamente.\033[m')
+            else:
+                break
 
     # Função para emetir sucesso ao final operação escolhida
     def sucess(self):
@@ -150,11 +156,16 @@ class CrudJson:
             CrudJson().get()
 
             if cont > 0:
-                print('\033[94mInsira as informações abaixo:')
+                print('\033[94mInsira as informações abaixo\033[m')
                 sleep(1)
-
-                alterar_nome = str(input('Nome atualizado: '))
-                alterar_idade = int(input('Idade atualizada:\033[m '))
+                while True:
+                    try:
+                        alterar_nome = str(input('\033[94mNome atualizado: '))
+                        alterar_idade = int(input('Idade atualizada:\033[m '))
+                    except Exception:
+                        print('\033[91mDados inválidos, tente novamente.\033[m')
+                    else:
+                        break
 
                 for c in range(0, len(dados)):
                     if dados[c]['nome'] == buscar:
@@ -222,4 +233,4 @@ print('\033[97m\nEncerrando programa\033[m', end='')
 for c in range(0, 3):
     print('.', end='')
     sleep(0.5)
-print('\033[97m\nPROGRAMA FINALIZADO!!!\033[m')
+print('\033[1:92m\nPROGRAMA FINALIZADO!!!\033[m')
