@@ -6,20 +6,20 @@ cadastro = []
 
 class CrudJson:
     # Função para escolher a opção do usuário
-    def resposta(self):
+    def menu(self):
         global resp
 
         print()
         print('\033[1:34m=\033[m' * 40)
         print('{:^55}'.format('\033[1:30:107m   Escolha uma das opções abaixo   \033[m'))
         print('\033[1:34m=\033[m' * 40)
-        resp = int(input('\033[97m1.\033[m Redefinir arquivo JSON\n'
-                         '\033[97m2.\033[m Ler JSON\n'
-                         '\033[97m3.\033[m Novo cadastro\n'
-                         '\033[97m4.\033[m Buscar cadastro\n'
-                         '\033[97m5.\033[m Alterar cadastro\n'
-                         '\033[97m6.\033[m Deletar cadastro\n'
-                         '\033[97m0.\033[m Sair\n'
+        resp = int(input('\033[97m1.\033[m \033[93mRedefinir arquivo JSON\033[m\n'
+                         '\033[97m2.\033[m \033[93mLer JSON\033[m\n'
+                         '\033[97m3.\033[m \033[93mNovo cadastro\033[m\n'
+                         '\033[97m4.\033[m \033[93mBuscar cadastro\033[m\n'
+                         '\033[97m5.\033[m \033[93mAlterar cadastro\033[m\n'
+                         '\033[97m6.\033[m \033[93mDeletar cadastro\033[m\n'
+                         '\033[97m0.\033[m \033[93mSair\033[m\n'
                          '\033[97mOpção:\033[m '))
 
     # Função para salvar dados de entrada NOME e IDADE
@@ -192,7 +192,7 @@ class CrudJson:
 # Trativa de opções para execução das funções
 while True:
     try:
-        opcao = CrudJson().resposta()
+        opcao = CrudJson().menu()
 
     except:
         print('\033[91mDigite uma opção válida\033[m')
